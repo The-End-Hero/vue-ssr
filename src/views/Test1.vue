@@ -16,10 +16,10 @@ import axios from 'axios';
             return {items: this.$store.state.arrs,obj: this.$store.state.arrs222}
         },
         asyncData({store}) {
-            return axios.get('http://cm.dev.rs.com/contract-web/process/loginForMobile?userId=51006793')
+            return axios.get('http://react-china.org/t/15805.json?track_visit=true&forceLoad=true&_=1513605282810')
                 .then(function (response) {
                     console.log('fetch1')
-                    store.commit('SET_TEST222', response.data.dataMap);
+                    store.commit('SET_TEST222', response.data.post_stream);
 //                    return response.json();
                 })
                 .catch(function (error) {

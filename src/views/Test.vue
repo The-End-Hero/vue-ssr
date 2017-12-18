@@ -1,7 +1,7 @@
 <template>
     <div>
         <h1>dssadijasnfijasnf</h1>
-        <!--<div v-for="item in items">{{item}}</div>-->
+        <div v-for="item in items">{{item}}</div>
         <div>{{obj}}</div>
         <router-link to="/t1">1111111</router-link>
     </div>
@@ -17,11 +17,14 @@ import axios from 'axios';
             return {items: this.$store.state.arrs,obj: this.$store.state.arrs222}
         },
         asyncData({store}) {
-            return axios.get('http://cm.dev.rs.com/contract-web/process/loginForMobile?userId=51006793')
+            return axios.get('http://react-china.org/t/15805.json?track_visit=true&forceLoad=true&_=1513605282810')
                 .then(function (response) {
-                    console.log('fetch')
-                    console.log(response.data.dataMap);
-                    store.commit('SET_TEST222', response.data.dataMap);
+                    console.log('axios')
+                    console.log(response);
+                    console.log(response.data.post_stream);
+                    store.commit('SET_TEST', response.data.post_stream.stream);
+                    store.commit('SET_TEST222', response.data.post_stream);
+
 //                    return response.json();
                 })
                 .catch(function (error) {
