@@ -59,3 +59,7 @@ npm start
 ## License
 
 MIT
+
+### vue-ssr原理构成分析
+
+使用asyncdata静态方法获取数据使用async/await  在routeronready的路由钩子函数中执行，获取数据同步到vuex中。
